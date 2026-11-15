@@ -129,12 +129,17 @@ export const MapView: React.FC<MapViewProps> = ({
               const step = tile.dataset?.retryStep || '0';
               if (step === '0') {
                 if (tile.dataset) tile.dataset.retryStep = '1';
-                tile.src = `https://b.tile.openstreetmap.fr/hot/${coords.z}/${coords.x}/${coords.y}.png`;
+                tile.src = `https://a.tile.openstreetmap.fr/osmfr/${coords.z}/${coords.x}/${coords.y}.png`;
                 return;
               }
               if (step === '1') {
                 if (tile.dataset) tile.dataset.retryStep = '2';
-                tile.src = `https://a.basemaps.cartocdn.com/rastertiles/voyager/${coords.z}/${coords.x}/${coords.y}.png`;
+                tile.src = `https://b.tile.openstreetmap.fr/osmfr/${coords.z}/${coords.x}/${coords.y}.png`;
+                return;
+              }
+              if (step === '2') {
+                if (tile.dataset) tile.dataset.retryStep = '3';
+                tile.src = `https://c.tile.openstreetmap.fr/osmfr/${coords.z}/${coords.x}/${coords.y}.png`;
                 return;
               }
             }
