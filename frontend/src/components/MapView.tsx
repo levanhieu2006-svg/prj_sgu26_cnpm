@@ -97,6 +97,7 @@ export const MapView: React.FC<MapViewProps> = ({
         const installBasemap = (fallback: boolean) => {
           currentLayer?.remove?.();
           let failed = false;
+          let loadedTiles = 0;
           const tiles = L.tileLayer(fallback
             ? 'https://a.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png'
             : 'https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -106,14 +107,41 @@ export const MapView: React.FC<MapViewProps> = ({
           });
           currentLayer = tiles;
           tiles.on('loading', () => { if (active && tiles === currentLayer) { failed = false; setTileError(false); } });
-          tiles.on('load', () => { if (active && tiles === currentLayer && !failed) setTileError(false); });
-          tiles.on('tileerror', () => {
+          tiles.on('tileload', () => {
+            if (active && tiles === currentLayer) {
+              loadedTiles += 1;
+              failed = false;
+              setTileError(false);
+            }
+          });
+          tiles.on('load', () => { if (active && tiles === currentLayer && (!failed || loadedTiles > 0)) setTileError(false); });
+          tiles.on('tileerror', (err?: any) => {
             if (!active || tiles !== currentLayer) return;
-            failed = true;
             if (!fallbackUsed) {
+              failed = true;
               fallbackUsed = true;
               installBasemap(true); // One bounded fallback; never bypass HTTPS validation.
-            } else setTileError(true);
+              return;
+            }
+            const tile = err?.tile;
+            const coords = err?.coords;
+            if (tile && coords && typeof coords.z === 'number') {
+              const step = tile.dataset?.retryStep || '0';
+              if (step === '0') {
+                if (tile.dataset) tile.dataset.retryStep = '1';
+                tile.src = `https://b.tile.openstreetmap.fr/hot/${coords.z}/${coords.x}/${coords.y}.png`;
+                return;
+              }
+              if (step === '1') {
+                if (tile.dataset) tile.dataset.retryStep = '2';
+                tile.src = `https://a.basemaps.cartocdn.com/rastertiles/voyager/${coords.z}/${coords.x}/${coords.y}.png`;
+                return;
+              }
+            }
+            if (loadedTiles === 0) {
+              failed = true;
+              setTileError(true);
+            }
           });
           tiles.addTo(map);
         };
