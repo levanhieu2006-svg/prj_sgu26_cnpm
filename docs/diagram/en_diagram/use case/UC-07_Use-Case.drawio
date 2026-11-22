@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" version="26.0.0">
+  <diagram id="UC-07 Phân rã chức năng" name="UC-07 Phân rã chức năng">
+    <mxGraphModel grid="1" gridSize="10" page="1" pageScale="1" pageWidth="1360" pageHeight="700">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="boundary" value="SAIGON ZOO AUDIO GUIDE SYSTEM&lt;br&gt;UC-07 — Select and Customize Tour" style="html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=19;fontColor=#111827;strokeColor=#374151;fillColor=#FFFFFF;strokeWidth=1.5;rounded=0;verticalAlign=top;spacingTop=22;fontStyle=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="280" y="30" width="1030" height="620" as="geometry" />
+        </mxCell>
+        <mxCell id="guest" value="Visitor" style="html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=19;fontColor=#111827;strokeColor=#374151;fillColor=#FFFFFF;strokeWidth=1.5;shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="60" y="285" width="65" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="template" value="UC-07.1&lt;br&gt;Use sample tour" style="html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=22;fontColor=#111827;strokeColor=#374151;fillColor=#FFFFFF;strokeWidth=1.5;ellipse;" vertex="1" parent="1">
+          <mxGeometry x="420" y="160" width="360" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="custom" value="UC-07.2&lt;br&gt;Create custom tour" style="html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=22;fontColor=#111827;strokeColor=#374151;fillColor=#FFFFFF;strokeWidth=1.5;ellipse;" vertex="1" parent="1">
+          <mxGeometry x="420" y="445" width="360" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="map" value="UC-07.3&lt;br&gt;View tour&lt;br&gt;on map" style="html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=21;fontColor=#111827;strokeColor=#374151;fillColor=#FFFFFF;strokeWidth=1.5;ellipse;" vertex="1" parent="1">
+          <mxGeometry x="935" y="300" width="320" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-template" style="html=1;rounded=0;endArrow=none;endFill=1;strokeColor=#4B5563;strokeWidth=1.5;fontFamily=Arial;fontSize=17;exitX=1.0;exitY=0.4444444444444444;exitPerimeter=0;entryX=0.1118537470071399;entryY=0.815186431001721;entryPerimeter=0;" edge="1" parent="1" source="guest" target="template">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-custom" style="html=1;rounded=0;endArrow=none;endFill=1;strokeColor=#4B5563;strokeWidth=1.5;fontFamily=Arial;fontSize=17;exitX=1.0;exitY=0.4444444444444444;exitPerimeter=0;entryX=0.18690662966111485;entryY=0.11016344264571888;entryPerimeter=0;" edge="1" parent="1" source="guest" target="custom">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="include-template-map" style="html=1;rounded=0;endArrow=open;endFill=0;strokeColor=#4B5563;strokeWidth=1.5;fontFamily=Arial;fontSize=17;exitX=0.8497479767876086;exitY=0.8573182793154788;exitPerimeter=0;entryX=0.1085389904864666;entryY=0.18894007324850529;entryPerimeter=0;dashed=1;" edge="1" parent="1" source="template" target="map" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="include-custom-map" style="html=1;rounded=0;endArrow=open;endFill=0;strokeColor=#4B5563;strokeWidth=1.5;fontFamily=Arial;fontSize=17;exitX=0.8620689655172413;exitY=0.15517241379310354;exitPerimeter=0;entryX=0.09822140332762715;entryY=0.7976137753128687;entryPerimeter=0;dashed=1;" edge="1" parent="1" source="custom" target="map" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

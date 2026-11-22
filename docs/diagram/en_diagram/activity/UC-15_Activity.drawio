@@ -1,0 +1,234 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-10-18T12:00:00.000Z" agent="Mozilla/5.0" version="24.7.0" type="device"><diagram id="uc15-activity" name="UC-15_Activity">
+
+    <mxGraphModel dx="1420" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1560" math="0" shadow="0">
+
+      <root>
+
+        <mxCell id="0" />
+
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="UC-15 – MANAGE KNOWLEDGE BASE" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#0f172a;" vertex="1" parent="1">
+
+          <mxGeometry x="310" y="10" width="420" height="30" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="start" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#0f172a;strokeColor=#0f172a;" vertex="1" parent="1">
+
+          <mxGeometry x="507" y="50" width="26" height="26" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="act1" value="Staff opens Knowledge Base Management on admin portal" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="350" y="100" width="340" height="48" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="act2" value="Validate internal login session and STAFF or ADMIN role" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="350" y="175" width="340" height="48" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="dec1" value="Valid internal session and&#10;STAFF/ADMIN permission?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="390" y="250" width="260" height="80" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="e1" value="E1. Deny access (401/403);&#10;redirect to internal login page" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="30" y="263" width="260" height="54" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="act3" value="Display list of existing documents&#10;with status and version" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="350" y="360" width="340" height="48" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="dec2" value="Action selected&#10;by staff?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="390" y="435" width="260" height="80" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="a1" value="A1. Deactivate: set document status to&#10;INACTIVE, increment content_version and log AUDIT_LOGS" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="750" y="446" width="280" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="merge_form" value="" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="506" y="540" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="act4" value="Enter document title, detailed text content,&#10;source citation and click Save" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="350" y="590" width="340" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="dec3" value="Title and content data&#10;valid (non-empty)?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="390" y="665" width="260" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="E2. Notify required field error; keep&#10;form intact for staff editing" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="750" y="678" width="260" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="dec4" value="Add new document or&#10;edit existing document?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="390" y="775" width="260" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="A2. Update existing doc: increment content_version,&#10;save KNOWLEDGE_DOCUMENTS and log AUDIT_LOGS" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="750" y="788" width="280" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="act5" value="Phase 1 (Tx1): Save KNOWLEDGE_DOCUMENTS (status INACTIVE,&#10;bump content_version if edited) and log AUDIT_LOGS" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="350" y="880" width="340" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="merge_saved" value="" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="506" y="950" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="dec5" value="Transaction 1 (Tx1) database&#10;commit succeeded?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="390" y="1000" width="260" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="E3. Database error saving document:&#10;rollback Transaction 1 and report error" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="30" y="1013" width="260" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="act6" value="Outside transaction: Split text (chunking)&#10;and send request to AI Embedding Service (timeout)" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="350" y="1110" width="340" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="dec6" value="Embedding succeeded and&#10;content_version == source_version?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="390" y="1185" width="260" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="E4. AI or chunk save error: rollback Tx2 (if open);&#10;keep doc INACTIVE, provide &quot;Reprocess&quot; button" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="30" y="1196" width="260" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="act7" value="Phase 2 (Tx2): Save KNOWLEDGE_CHUNKS, update&#10;status = ACTIVE in KNOWLEDGE_DOCUMENTS; commit Tx2" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="350" y="1295" width="340" height="52" as="geometry" />
+        </mxCell>
+
+        <mxCell id="merge_ok" value="" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;" vertex="1" parent="1">
+
+          <mxGeometry x="506" y="1375" width="28" height="28" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="act8" value="Notify knowledge base saved and updated successfully" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="350" y="1425" width="340" height="48" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="merge_fail" value="" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;" vertex="1" parent="1">
+
+          <mxGeometry x="146" y="1355" width="28" height="28" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="fail_act" value="Document indexing incomplete" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="40" y="1425" width="240" height="48" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="end" value="" style="ellipse;html=1;shape=endState;fillColor=#0f172a;strokeColor=#0f172a;" vertex="1" parent="1">
+
+          <mxGeometry x="505" y="1505" width="30" height="30" as="geometry" />
+
+        </mxCell>
+
+
+
+        
+
+        <mxCell id="e15_1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="start" target="act1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e15_2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="act1" target="act2"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e15_3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="act2" target="dec1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e15_4" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec1" target="e1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e15_5" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec1" target="act3"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e15_6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="act3" target="dec2"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e15_7" value="Deactivate" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec2" target="a1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e15_8" value="Add / Edit" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec2" target="merge_form"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e15_9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="merge_form" target="act4"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e15_10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="act4" target="dec3"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e15_11" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec3" target="e2"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e15_12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;exitX=0.5;exitY=0;entryX=1;entryY=0.5;" edge="1" parent="1" source="e2" target="merge_form">
+
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="880" y="554" /></Array></mxGeometry>
+
+        </mxCell>
+
+        <mxCell id="e15_13" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec3" target="dec4"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e15_14" value="Edit" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec4" target="a2"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e15_15" value="Add new" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec4" target="act5"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e15_16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="act5" target="merge_saved"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e15_17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" edge="1" parent="1" source="a2" target="merge_saved">
+
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="880" y="964" /></Array></mxGeometry>
+
+        </mxCell>
+
+        <mxCell id="e15_18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="merge_saved" target="dec5"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e15_19" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec5" target="e3"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e15_20" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec5" target="act6"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e15_21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="act6" target="dec6"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e15_22" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec6" target="e4"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e15_23" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec6" target="act7"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e15_24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="act7" target="merge_ok"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e15_25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="a1" target="merge_ok">
+
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1040" y="475" /><mxPoint x="1040" y="1389" /></Array></mxGeometry>
+
+        </mxCell>
+
+        <mxCell id="e15_26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="merge_ok" target="act8"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e15_27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="act8" target="end"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e15_28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="e1" target="merge_fail">
+
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="12" y="290" /><mxPoint x="12" y="1369" /></Array></mxGeometry>
+
+        </mxCell>
+
+        <mxCell id="e15_29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="e3" target="merge_fail">
+
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="12" y="1040" /><mxPoint x="12" y="1369" /></Array></mxGeometry>
+
+        </mxCell>
+
+        <mxCell id="e15_30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="e4" target="merge_fail"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e15_31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="merge_fail" target="fail_act"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e15_32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;exitX=0.5;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="fail_act" target="end">
+
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="160" y="1520" /></Array></mxGeometry>
+
+        </mxCell>
+
+      </root>
+
+    </mxGraphModel>
+
+  </diagram>
+
+</mxfile>

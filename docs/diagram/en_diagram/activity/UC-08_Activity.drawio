@@ -1,0 +1,232 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-10-18T12:00:00.000Z" agent="Mozilla/5.0" version="24.7.0" type="device"><diagram id="uc08-activity" name="UC-08_Activity">
+
+    <mxGraphModel dx="1420" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1260" math="0" shadow="0">
+
+      <root>
+
+        <mxCell id="0" />
+
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="UC-08 – RAG CHATBOT Q&amp;A" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#0f172a;" vertex="1" parent="1">
+
+          <mxGeometry x="310" y="10" width="420" height="30" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="start" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#0f172a;strokeColor=#0f172a;" vertex="1" parent="1">
+
+          <mxGeometry x="507" y="50" width="26" height="26" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="act1" value="Visitor opens chatbot window, enters natural-language&#10;question and clicks Send" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="350" y="100" width="340" height="48" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="act2" value="Validate visit session, input data&#10;(non-empty, valid length) and rate limit" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="350" y="175" width="340" height="48" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="dec1" value="Visit session&#10;still valid?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="390" y="250" width="260" height="80" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="e1" value="E1. Reject question; notify&#10;visit session has expired" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="30" y="263" width="260" height="54" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="dec2" value="Question valid and&#10;within rate limit?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="390" y="360" width="260" height="80" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="e2" value="E2. Report invalid input or rate limit exceeded;&#10;ask to wait a few seconds before asking again" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="30" y="373" width="260" height="54" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="dec3" value="Question requests payment&#10;or admin actions?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="390" y="470" width="260" height="80" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="a2" value="A2. Reject unauthorized request; clarify it only&#10;supports Saigon Zoo visit information" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="750" y="483" width="260" height="54" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="act3" value="Extract question embedding vector; query&#10;KNOWLEDGE_CHUNKS of version-matched ACTIVE docs" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="350" y="580" width="340" height="54" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="act4" value="Package document context with question and send&#10;to Large Language Model (LLM)" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="350" y="660" width="340" height="48" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="dec4" value="Embedding / LLM Service&#10;responded successfully?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="390" y="735" width="260" height="80" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="e3" value="E3. Log CHAT_LOGS status FAILED; notify temporary&#10;AI outage (without interrupting map/audio)" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="30" y="748" width="260" height="56" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="dec5" value="Retrieved context sufficient&#10;to answer question?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="390" y="845" width="260" height="80" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="a1" value="A1. Politely reply knowledge base lacks official&#10;info; record status NO_CONTEXT" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="750" y="858" width="260" height="56" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="act5" value="Generate answer in question's language&#10;with source citations; status SUCCESS" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="350" y="955" width="340" height="52" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="merge_ok" value="" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;" vertex="1" parent="1">
+
+          <mxGeometry x="506" y="1035" width="28" height="28" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="act6" value="Display response and save to CHAT_LOGS&#10;(no secrets or raw tokens stored)" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="350" y="1090" width="340" height="52" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="merge_fail" value="" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;" vertex="1" parent="1">
+
+          <mxGeometry x="146" y="1020" width="28" height="28" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="fail_act" value="Question answering incomplete" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="40" y="1090" width="240" height="48" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="end" value="" style="ellipse;html=1;shape=endState;fillColor=#0f172a;strokeColor=#0f172a;" vertex="1" parent="1">
+
+          <mxGeometry x="505" y="1175" width="30" height="30" as="geometry" />
+
+        </mxCell>
+
+
+
+        
+
+        <mxCell id="e08_1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="start" target="act1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e08_2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="act1" target="act2"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e08_3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="act2" target="dec1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e08_4" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec1" target="e1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e08_5" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec1" target="dec2"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e08_6" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec2" target="e2"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e08_7" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec2" target="dec3"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e08_8" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec3" target="a2"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e08_9" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec3" target="act3"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e08_10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="act3" target="act4"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e08_11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="act4" target="dec4"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e08_12" value="Error / Timeout" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec4" target="e3"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e08_13" value="Success" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec4" target="dec5"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e08_14" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec5" target="a1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e08_15" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec5" target="act5"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e08_16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="act5" target="merge_ok"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e08_17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="a2" target="merge_ok">
+
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1040" y="510" /><mxPoint x="1040" y="1049" /></Array></mxGeometry>
+
+        </mxCell>
+
+        <mxCell id="e08_18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="a1" target="merge_ok">
+
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1040" y="886" /><mxPoint x="1040" y="1049" /></Array></mxGeometry>
+
+        </mxCell>
+
+        <mxCell id="e08_19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="merge_ok" target="act6"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e08_20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="act6" target="end"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e08_21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="e1" target="merge_fail">
+
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="12" y="290" /><mxPoint x="12" y="1034" /></Array></mxGeometry>
+
+        </mxCell>
+
+        <mxCell id="e08_22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="e2" target="merge_fail">
+
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="12" y="400" /><mxPoint x="12" y="1034" /></Array></mxGeometry>
+
+        </mxCell>
+
+        <mxCell id="e08_23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="e3" target="merge_fail"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e08_24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="merge_fail" target="fail_act"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e08_25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;exitX=0.5;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="fail_act" target="end">
+
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="160" y="1190" /></Array></mxGeometry>
+
+        </mxCell>
+
+      </root>
+
+    </mxGraphModel>
+
+  </diagram>
+
+
+
+  
+
+  
+
+  
+
+  </mxfile>

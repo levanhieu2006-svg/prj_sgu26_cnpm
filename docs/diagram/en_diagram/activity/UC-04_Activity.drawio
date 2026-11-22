@@ -1,0 +1,240 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-10-18T12:00:00.000Z" agent="Mozilla/5.0" version="24.7.0" type="device"><diagram id="uc04-activity" name="UC-04_Activity">
+
+    <mxGraphModel dx="1420" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1350" math="0" shadow="0">
+
+      <root>
+
+        <mxCell id="0" />
+
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="UC-04 – LANGUAGE SELECTION" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#0f172a;" vertex="1" parent="1">
+
+          <mxGeometry x="310" y="10" width="420" height="30" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="start" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#0f172a;strokeColor=#0f172a;" vertex="1" parent="1">
+
+          <mxGeometry x="507" y="50" width="26" height="26" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="act1" value="Visitor taps language selector icon&#10;at top-right corner of screen" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="350" y="100" width="340" height="48" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="dec1" value="Supported language&#10;catalog retrieved?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="390" y="175" width="260" height="80" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="e1" value="E1. Notify empty language catalog;&#10;keep current default language" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="30" y="188" width="260" height="54" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="act2" value="Display list of active languages" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="350" y="285" width="340" height="48" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="act3" value="Visitor selects desired language from list" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="350" y="360" width="340" height="48" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="dec2" value="Same as currently&#10;active language?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="390" y="435" width="260" height="80" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="a1" value="A1. Close selector list; keep existing&#10;data without re-calling API" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="750" y="448" width="260" height="54" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="act4" value="Validate visit session and request content&#10;bundle for selected language code" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="350" y="545" width="340" height="48" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="dec3" value="Visit session&#10;still valid?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="390" y="620" width="260" height="80" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="e2" value="E2. Reject new bundle load; redirect visitor&#10;to ticket expiration notice page" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="30" y="633" width="260" height="54" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="dec4" value="New language bundle&#10;loaded successfully?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="390" y="730" width="260" height="80" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="e3" value="E3. Notify language switch failed;&#10;continue using previous language data" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="30" y="743" width="260" height="54" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="act5" value="Record access in BUNDLE_ACCESS_LOGS&#10;and receive new bundle in browser" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="350" y="840" width="340" height="48" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="dec5" value="Response matches latest&#10;language request?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="390" y="915" width="260" height="80" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="stale" value="Discard late response from previous selection&#10;to avoid overwriting new choice" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="750" y="928" width="260" height="54" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="act6" value="Stop/cancel old language audio stream (if playing);&#10;replace cache and update UI and map" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="350" y="1025" width="340" height="52" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="act7" value="Save selected language code to localStorage" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="350" y="1105" width="340" height="48" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="merge_ok" value="" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;" vertex="1" parent="1">
+
+          <mxGeometry x="506" y="1180" width="28" height="28" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="merge_fail" value="" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;" vertex="1" parent="1">
+
+          <mxGeometry x="146" y="1105" width="28" height="28" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="fail_act" value="No language switch" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+
+          <mxGeometry x="40" y="1170" width="240" height="48" as="geometry" />
+
+        </mxCell>
+
+        <mxCell id="end" value="" style="ellipse;html=1;shape=endState;fillColor=#0f172a;strokeColor=#0f172a;" vertex="1" parent="1">
+
+          <mxGeometry x="505" y="1245" width="30" height="30" as="geometry" />
+
+        </mxCell>
+
+
+
+        
+
+        <mxCell id="e04_1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="start" target="act1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e04_2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="act1" target="dec1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e04_3" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec1" target="e1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e04_4" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec1" target="act2"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e04_5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="act2" target="act3"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e04_6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="act3" target="dec2"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e04_7" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec2" target="a1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e04_8" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec2" target="act4"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e04_9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="act4" target="dec3"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e04_10" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec3" target="e2"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e04_11" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec3" target="dec4"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e04_12" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec4" target="e3"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e04_13" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec4" target="act5"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e04_14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="act5" target="dec5"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e04_15" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec5" target="stale"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e04_16" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec5" target="act6"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e04_17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="act6" target="act7"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e04_18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="act7" target="merge_ok"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e04_19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="a1" target="merge_ok">
+
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1040" y="475" /><mxPoint x="1040" y="1194" /></Array></mxGeometry>
+
+        </mxCell>
+
+        <mxCell id="e04_20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="stale" target="merge_ok">
+
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1040" y="955" /><mxPoint x="1040" y="1194" /></Array></mxGeometry>
+
+        </mxCell>
+
+        <mxCell id="e04_21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="merge_ok" target="end"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e04_22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="e1" target="merge_fail">
+
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="12" y="215" /><mxPoint x="12" y="1119" /></Array></mxGeometry>
+
+        </mxCell>
+
+        <mxCell id="e04_23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="e2" target="merge_fail">
+
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="12" y="660" /><mxPoint x="12" y="1119" /></Array></mxGeometry>
+
+        </mxCell>
+
+        <mxCell id="e04_24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="e3" target="merge_fail"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e04_25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="merge_fail" target="fail_act"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e04_26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;exitX=0.5;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="fail_act" target="end">
+
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="160" y="1260" /></Array></mxGeometry>
+
+        </mxCell>
+
+      </root>
+
+    </mxGraphModel>
+
+  </diagram>
+
+
+
+  
+
+  
+
+  
+
+  </mxfile>

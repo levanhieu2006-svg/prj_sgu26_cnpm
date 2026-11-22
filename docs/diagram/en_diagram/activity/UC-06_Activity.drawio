@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-10-19T03:30:00.000Z" agent="Mozilla/5.0" version="24.7.0" type="device"><diagram id="uc06-activity" name="UC-06_Activity">
+    <mxGraphModel dx="1420" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1580" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="UC-06 – GPS-TRIGGERED AUTO AUDIO GUIDE" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="290" y="10" width="460" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="start" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#0f172a;strokeColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="507" y="50" width="26" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="act1" value="Visitor taps &quot;Start Tour&quot; button on map control bar" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="350" y="100" width="340" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="act2" value="Capture audio interaction permission and&#10;start continuous GPS coordinate tracking" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="350" y="175" width="340" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="dec1" value="Valid GPS coordinates&#10;received?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="390" y="250" width="260" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="E1. GPS lost/high error: pause auto-scan&#10;and prompt to check location settings" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="30" y="263" width="260" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="act3" value="Compute Haversine distance from visitor&#10;to ACTIVE POIs in bundle" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="350" y="360" width="340" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="dec2" value="Any played POI now exceeds&#10;1.5× radius (distance &gt; 1.5 × trigger_radius)?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="375" y="440" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" value="A1. Reset approach cycle: clear played flag&#10;for that POI to allow replay upon return" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="750" y="453" width="280" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="merge1" value="" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="506" y="545" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="dec3" value="(1) Any ACTIVE POI within radius (≤ trigger_radius)&#10;AND unplayed in current approach?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="375" y="595" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="out_range" value="No eligible POI to trigger;&#10;continue tracking in next location cycle" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="750" y="608" width="280" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="dec4" value="(2) Filtered list has two or more POIs&#10;(multiple POIs overlap in trigger zone)?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="375" y="705" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="A2. Skip played or overlapping POIs:&#10;prioritize only the nearest unplayed POI" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="750" y="718" width="280" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="merge2" value="" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="506" y="810" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="dec6" value="(3) Another audio guide&#10;currently playing?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="390" y="865" width="260" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" value="A3. Audio currently playing: do not interrupt&#10;current audio; wait until track finishes" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="750" y="878" width="280" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="act4" value="Auto-play audio in current language&#10;or fallback audio (English / Vietnamese)" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="350" y="975" width="340" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="dec7" value="Primary or fallback audio&#10;ready and loaded?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="390" y="1050" width="260" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="E2. Both primary and fallback audio missing/failed;&#10;notify unavailable and show text" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="30" y="1060" width="260" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="dec8" value="Browser blocks&#10;auto-play audio?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="390" y="1160" width="260" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="E3. Show button prompting visitor to tap&#10;to unlock playback; do not mark POI played" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="30" y="1173" width="260" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="act5" value="Audio playback started successfully; mark&#10;POI as played in current approach" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="350" y="1270" width="340" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="merge_end" value="" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="506" y="1350" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="merge_fail" value="" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="146" y="1270" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="fail_act" value="No auto-playback in this cycle" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1335" width="240" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="end" value="" style="ellipse;html=1;shape=endState;fillColor=#0f172a;strokeColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="505" y="1415" width="30" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e06_1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="start" target="act1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e06_2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="act1" target="act2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e06_3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="act2" target="dec1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e06_4" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec1" target="e1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e06_5" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec1" target="act3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e06_6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="act3" target="dec2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e06_7" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec2" target="a1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e06_8" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec2" target="merge1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e06_9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" edge="1" parent="1" source="a1" target="merge1">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="890" y="559" /></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="e06_10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="merge1" target="dec3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e06_11" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec3" target="out_range"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e06_12" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec3" target="dec4"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e06_13" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec4" target="a2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e06_14" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec4" target="merge2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e06_15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" edge="1" parent="1" source="a2" target="merge2">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="890" y="824" /></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="e06_16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="merge2" target="dec6"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e06_19" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec6" target="a3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e06_20" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec6" target="act4"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e06_21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="act4" target="dec7"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e06_22" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec7" target="e2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e06_23" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec7" target="dec8"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e06_24" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec8" target="e3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e06_25" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;fontFamily=Arial;fontSize=10;" edge="1" parent="1" source="dec8" target="act5"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e06_26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="act5" target="merge_end"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e06_27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="out_range" target="merge_end">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1050" y="634" /><mxPoint x="1050" y="1364" /></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="e06_28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="a3" target="merge_end">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1050" y="904" /><mxPoint x="1050" y="1364" /></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="e06_29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="merge_end" target="end"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e06_30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="e1" target="merge_fail"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e06_31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="e2" target="merge_fail"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e06_32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="e3" target="merge_fail"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e06_33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;" edge="1" parent="1" source="merge_fail" target="fail_act"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e06_34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#475569;exitX=0.5;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="fail_act" target="end">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="160" y="1430" /></Array></mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram></mxfile>

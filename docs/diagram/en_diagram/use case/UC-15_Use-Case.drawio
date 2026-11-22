@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-10-18T13:15:00.000Z" agent="Mozilla/5.0" version="24.7.0" type="device"><diagram id="uc15-uc" name="UC-15_UseCase">
+    <mxGraphModel dx="1000" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="940" pageHeight="440" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="sys" value="MULTILINGUAL AUDIO GUIDE SYSTEM FOR SAIGON ZOO&#10;UC-15 — Manage Knowledge Base" style="shape=rect;html=1;verticalAlign=top;fontStyle=1;whiteSpace=wrap;align=center;fillColor=#ffffff;strokeColor=#334155;fontColor=#0f172a;fontFamily=Arial;fontSize=12;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="230" y="30" width="460" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="staff" value="Staff (STAFF)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;strokeColor=#334155;fillColor=#ffffff;fontColor=#0f172a;fontFamily=Arial;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="95" width="35" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="admin" value="Administrator (ADMIN)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;strokeColor=#334155;fillColor=#ffffff;fontColor=#0f172a;fontFamily=Arial;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="255" width="35" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="actor2" value="Embedding &amp; LLM&#10;Service" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;strokeColor=#334155;fillColor=#ffffff;fontColor=#0f172a;fontFamily=Arial;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="780" y="140" width="35" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc15_1" value="UC-15.1: Add document" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#334155;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="340" y="90" width="240" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="uc15_2" value="UC-15.2: Update document" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#334155;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="340" y="190" width="240" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="uc15_3" value="UC-15.3: Deactivate document" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#334155;fontColor=#0f172a;fontFamily=Arial;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="340" y="290" width="240" height="65" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="s1" style="endArrow=none;html=1;strokeColor=#334155;" edge="1" parent="1" source="staff" target="uc15_1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="s2" style="endArrow=none;html=1;strokeColor=#334155;" edge="1" parent="1" source="staff" target="uc15_2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="s3" style="endArrow=none;html=1;strokeColor=#334155;" edge="1" parent="1" source="staff" target="uc15_3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        
+        <mxCell id="a1" style="endArrow=none;html=1;strokeColor=#334155;" edge="1" parent="1" source="admin" target="uc15_1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="a2" style="endArrow=none;html=1;strokeColor=#334155;" edge="1" parent="1" source="admin" target="uc15_2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="a3" style="endArrow=none;html=1;strokeColor=#334155;" edge="1" parent="1" source="admin" target="uc15_3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        
+        <mxCell id="e1" style="endArrow=none;html=1;strokeColor=#334155;" edge="1" parent="1" source="uc15_1" target="actor2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" style="endArrow=none;html=1;strokeColor=#334155;" edge="1" parent="1" source="uc15_2" target="actor2"><mxGeometry relative="1" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

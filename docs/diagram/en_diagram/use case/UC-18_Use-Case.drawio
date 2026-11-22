@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" version="26.0.0">
+  <diagram id="UC-18 Use Case" name="UC-18 Use Case">
+    <mxGraphModel grid="1" gridSize="10" page="1" pageScale="1" pageWidth="1120" pageHeight="540">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="boundary" value="MULTILINGUAL AUDIO GUIDE SYSTEM&lt;br&gt;FOR SAIGON ZOO AND BOTANICAL GARDENS" style="html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=20;fontColor=#111827;strokeColor=#374151;fillColor=#FFFFFF;strokeWidth=1.5;rounded=0;verticalAlign=top;spacingTop=22;fontStyle=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="300" y="35" width="780" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="uc" value="UC-18&lt;br&gt;Monitor health&lt;br&gt;and usage" style="html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=22;fontColor=#111827;strokeColor=#374151;fillColor=#FFFFFF;strokeWidth=1.5;ellipse;" vertex="1" parent="1">
+          <mxGeometry x="475" y="220" width="440" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="admin" value="Administrator&lt;br&gt;(ADMIN)" style="html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=18;fontColor=#111827;strokeColor=#374151;fillColor=#FFFFFF;strokeWidth=1.5;shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="85" y="230" width="65" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="admin-uc" style="html=1;rounded=0;endArrow=none;endFill=1;strokeColor=#4B5563;strokeWidth=1.5;fontFamily=Arial;fontSize=17;exitX=1.0;exitY=0.4444444444444444;exitPerimeter=0;entryX=0.0006916356246125329;entryY=0.47371012999698814;entryPerimeter=0;" edge="1" parent="1" source="admin" target="uc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
